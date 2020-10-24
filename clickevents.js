@@ -1,5 +1,11 @@
-const button = document.querySelector("button");
+const buttons = document.querySelectorAll("button");
+const body = document.querySelector("body");
 
-button.addEventListener('click', function() {
-	alert("You clicked me");
-})
+for(let i = 0; i < buttons.length; i++) {
+	buttons[i].addEventListener("click", function(event) {
+		const pTag = document.createElement('p');
+		pTag.textContent = event.target.value;
+		body.appendChild(pTag);
+	})
+}
+
